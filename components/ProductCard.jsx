@@ -1,3 +1,4 @@
+ /*
 import React from 'react'
 import { assets } from '@/assets/assets'
 import Image from 'next/image';
@@ -60,3 +61,50 @@ const ProductCard = ({ product }) => {
 }
 
 export default ProductCard
+*/
+
+"use client";
+
+import Image from "next/image";
+
+export default function ProductCard({ product }) {
+  return (
+    <div className="border rounded-2xl overflow-hidden bg-white hover:shadow-lg transition duration-300">
+
+      {/* Product Image */}
+      <div className="aspect-square bg-gray-100 flex items-center justify-center">
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.name}
+            className="object-cover w-full h-full"
+          />
+        ) : (
+          <span className="text-6xl">🪔</span>
+        )}
+      </div>
+
+      {/* Product Info */}
+      <div className="p-5">
+
+        <p className="text-sm text-orange-600">
+          {product.category}
+        </p>
+
+        <h3 className="text-lg font-semibold mt-1">
+          {product.name}
+        </h3>
+
+        <p className="text-2xl font-bold mt-3">
+          Rs. {product.price}
+        </p>
+
+        <button className="mt-5 w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-lg transition">
+          Order on WhatsApp
+        </button>
+
+      </div>
+
+    </div>
+  );
+}

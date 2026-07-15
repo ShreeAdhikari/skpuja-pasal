@@ -3,55 +3,55 @@ import React from "react";
 import { assets} from "@/assets/assets";
 import Link from "next/link"
 import { useAppContext } from "@/context/AppContext";
+import { navigation } from "@/data/navigation";
+import { siteConfig } from "@/config/site";
 import Image from "next/image";
 
-const Navbar = () => {
-
-  const { isSeller, router } = useAppContext();
-
+export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700">
-      <Image
-        className="cursor-pointer w-28 md:w-32"
-        onClick={() => router.push('/')}
-        src={assets.logo}
-        alt="logo"
-      />
-      <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
-        <Link href="/" className="hover:text-gray-900 transition">
-          Home
-        </Link>
-        <Link href="/all-products" className="hover:text-gray-900 transition">
-          Shop
-        </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
-          About Us
-        </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
-          Contact
+    <header className="sticky top-0 z-50 border-b border-[#E8DCC8] bg-white/95 backdrop-blur">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6 lg:px-8">
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <span className="text-2xl">🪔</span>
+          <span className="text-2xl font-bold text-[#2B2B2B]">
+            {siteConfig.name}
+          </span>
         </Link>
 
-        {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-gray-700 transition hover:text-[#C56A16]"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* WhatsApp Button */}
+        <a
+          href={`https://wa.me/${siteConfig.whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex rounded-full bg-[#C56A16] px-5 py-2.5 text-white transition hover:bg-[#A9540E]"
+        >
+          Order on WhatsApp
+        </a>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="text-3xl md:hidden"
+          aria-label="Open Menu"
+        >
+          ☰
+        </button>
 
       </div>
-
-      <ul className="hidden md:flex items-center gap-4 ">
-        <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
-        <button className="flex items-center gap-2 hover:text-gray-900 transition">
-          <Image src={assets.user_icon} alt="user icon" />
-          Account
-        </button>
-      </ul>
-
-      <div className="flex items-center md:hidden gap-3">
-        {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>}
-        <button className="flex items-center gap-2 hover:text-gray-900 transition">
-          <Image src={assets.user_icon} alt="user icon" />
-          Account
-        </button>
-      </div>
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}
