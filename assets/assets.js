@@ -2,9 +2,6 @@ import logo from "./logo.svg";
 import search_icon from "./search_icon.svg";
 import user_icon from "./user_icon.svg";
 import cart_icon from "./cart_icon.svg";
-import header_headphone_image from "./header_headphone_image.png";
-import header_playstation_image from "./header_playstation_image.png";
-import header_macbook_image from "./header_macbook_image.png";
 import add_icon from "./add_icon.svg";
 import order_icon from "./order_icon.svg";
 import instagram_icon from "./instagram_icon.svg";
@@ -49,9 +46,6 @@ export const assets = {
   arrow_icon_white,
   heart_icon,
   star_icon,
-  header_headphone_image,
-  header_playstation_image,
-  header_macbook_image,
   redirect_icon,
   star_dull_icon,
   upload_area,
