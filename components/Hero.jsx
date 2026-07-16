@@ -2,49 +2,45 @@
 
 import Image from "next/image";
 import { assets } from "@/assets/assets";
+import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="py-12 md:py-20">
-      <div className="grid md:grid-cols-2 items-center gap-12">
-
-        {/* Left */}
-        <div>
-          <p className="text-orange-600 font-semibold uppercase tracking-wider">
-            Welcome to
+    <section className="py-14 md:py-24">
+      <div className="grid gap-12 md:grid-cols-2 items-center">
+        <div className="space-y-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-primary)]">
+            ShreePuja
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-bold mt-3 leading-tight">
-            Shree Puja Pasal
+          <h1 className="text-4xl font-semibold leading-tight text-[var(--color-text)] md:text-6xl">
+            Discover authentic puja samagri for every ritual and festival.
           </h1>
 
-          <p className="mt-6 text-gray-600 text-lg leading-8">
-            Your trusted destination in Pokhara for quality puja samagri,
-            idols, incense, diyas, flowers, festival essentials, and all
-            religious items at affordable prices.
+          <p className="max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
+            Find handcrafted idols, fragrant incense, elegant diyas, and festival essentials from our Pokhara shop—curated for devotion, celebration, and daily worship.
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-8">
-            <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full transition">
+          <div className="flex flex-wrap gap-4 pt-4">
+            <Button className="rounded-[16px]" onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}>
               Browse Products
-            </button>
-
-            <button className="border border-gray-300 hover:bg-gray-100 px-8 py-3 rounded-full transition">
+            </Button>
+            <Button variant="secondary" className="rounded-[16px]">
               WhatsApp Us
-            </button>
+            </Button>
           </div>
         </div>
 
-        {/* Right */}
-        <div className="flex justify-center">
+        <div className="relative overflow-hidden rounded-[16px] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[0_20px_60px_rgba(197,106,22,0.12)]">
           <Image
             src={assets.placeholder}
             alt="Shree Puja Pasal"
-            className="rounded-2xl shadow-lg"
+            width={900}
+            height={700}
+            className="h-full w-full object-cover"
             priority
           />
         </div>
-
       </div>
     </section>
   );

@@ -1,111 +1,46 @@
- /*
-import React from 'react'
-import { assets } from '@/assets/assets'
-import Image from 'next/image';
-import { useAppContext } from '@/context/AppContext';
-
-const ProductCard = ({ product }) => {
-
-    const { currency, router } = useAppContext()
-
-    return (
-        <div
-            onClick={() => { router.push('/product/' + product._id); scrollTo(0, 0) }}
-            className="flex flex-col items-start gap-0.5 max-w-[200px] w-full cursor-pointer"
-        >
-            <div className="cursor-pointer group relative bg-gray-500/10 rounded-lg w-full h-52 flex items-center justify-center">
-                <Image
-                    src={product.image[0]}
-                    alt={product.name}
-                    className="group-hover:scale-105 transition object-cover w-4/5 h-4/5 md:w-full md:h-full"
-                    width={800}
-                    height={800}
-                />
-                <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">
-                    <Image
-                        className="h-3 w-3"
-                        src={assets.heart_icon}
-                        alt="heart_icon"
-                    />
-                </button>
-            </div>
-
-            <p className="md:text-base font-medium pt-2 w-full truncate">{product.name}</p>
-            <p className="w-full text-xs text-gray-500/70 max-sm:hidden truncate">{product.description}</p>
-            <div className="flex items-center gap-2">
-                <p className="text-xs">{4.5}</p>
-                <div className="flex items-center gap-0.5">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                        <Image
-                            key={index}
-                            className="h-3 w-3"
-                            src={
-                                index < Math.floor(4)
-                                    ? assets.star_icon
-                                    : assets.star_dull_icon
-                            }
-                            alt="star_icon"
-                        />
-                    ))}
-                </div>
-            </div>
-
-            <div className="flex items-end justify-between w-full mt-1">
-                <p className="text-base font-medium">{currency}{product.offerPrice}</p>
-                <button className=" max-sm:hidden px-4 py-1.5 text-gray-500 border border-gray-500/20 rounded-full text-xs hover:bg-slate-50 transition">
-                    Buy now
-                </button>
-            </div>
-        </div>
-    )
-}
-
-export default ProductCard
-*/
-
 "use client";
 
 import Image from "next/image";
-
+import Link from "next/link";
 
 export default function ProductCard({ product }) {
   return (
-    <div className="border rounded-2xl overflow-hidden bg-white hover:shadow-lg transition duration-300">
+    <div className="overflow-hidden rounded-[16px] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl">
+      <Link href={`/product/${product.slug}`} className="block">
+        <div className="aspect-square bg-[var(--color-background)] flex items-center justify-center">
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={400}
+              height={400}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <span className="text-6xl">🪔</span>
+          )}
+        </div>
+      </Link>
 
-      {/* Product Image */}
-      <div className="aspect-square bg-gray-100 flex items-center justify-center">
-        {product.image ? (
-          <Image
-            src={product.image}
-            alt={product.name}
-            className="object-cover w-full h-full"
-          />
-        ) : (
-          <span className="text-6xl">🪔</span>
-        )}
-      </div>
-
-      {/* Product Info */}
-      <div className="p-5">
-
-        <p className="text-sm text-orange-600">
+      <div className="space-y-4 p-5">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[var(--color-primary)]">
           {product.category}
         </p>
 
-        <h3 className="text-lg font-semibold mt-1">
-          {product.name}
-        </h3>
+        <div className="space-y-2">
+          <h3 className="text-lg font-semibold text-[var(--color-text)]">{product.name}</h3>
+          <p className="text-2xl font-bold text-[var(--color-text)]">Rs. {product.price}</p>
+        </div>
 
-        <p className="text-2xl font-bold mt-3">
-          Rs. {product.price}
-        </p>
-
-        <button className="mt-5 w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-lg transition">
-          Order on WhatsApp
-        </button>
-
+        <div className="flex items-center justify-between gap-3">
+          <span className={`rounded-full px-3 py-1 text-xs font-semibold ${product.inStock ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
+            {product.inStock ? "In Stock" : "Out of Stock"}
+          </span>
+          <Link href={`/product/${product.slug}`} className="text-sm font-semibold text-[var(--color-primary)] transition hover:text-[var(--color-primary-hover)]">
+            View Details →
+          </Link>
+        </div>
       </div>
-
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { products } from "@/data/products";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ProductCard from "@/components/ProductCard";
 
 const ProductPage = async ({ params }) => {
   const { slug } = await params;
@@ -15,7 +16,7 @@ const ProductPage = async ({ params }) => {
         <Navbar />
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <h1 className="text-3xl font-bold">Product Not Found</h1>
-          <Link href="/product" className="inline-block mt-6 text-orange-600 hover:underline">
+          <Link href="/products" className="inline-block mt-6 text-[var(--color-primary)] hover:underline">
             ← Back to Products
           </Link>
         </div>
@@ -33,12 +34,12 @@ const ProductPage = async ({ params }) => {
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-10">
-        <Link href="/product" className="text-orange-600 hover:underline font-medium">
+        <Link href="/products" className="text-[var(--color-primary)] hover:underline font-medium">
           ← Back to Products
         </Link>
 
-        <section className="mt-8 grid md:grid-cols-2 gap-12 items-start">
-          <div className="bg-gray-100 rounded-2xl h-[450px] flex items-center justify-center">
+        <section className="mt-8 grid gap-12 md:grid-cols-2 items-start">
+          <div className="rounded-[16px] border border-[var(--color-border)] bg-[var(--color-surface)] h-[450px] flex items-center justify-center">
             {product.image ? (
               <img
                 src={product.image}
@@ -46,7 +47,7 @@ const ProductPage = async ({ params }) => {
                 className="max-h-full object-contain"
               />
             ) : (
-              <div className="text-center text-gray-500">
+              <div className="text-center text-[var(--color-muted)]">
                 <div className="text-6xl mb-4">🪔</div>
                 <p>Product Image</p>
               </div>
@@ -54,27 +55,27 @@ const ProductPage = async ({ params }) => {
           </div>
 
           <div>
-            <p className="text-sm uppercase tracking-wide text-gray-500">{product.category}</p>
-            <h1 className="text-4xl font-bold mt-2">{product.name}</h1>
-            <p className="text-3xl font-semibold text-orange-600 mt-6">Rs. {product.price}</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-[var(--color-primary)]">{product.category}</p>
+            <h1 className="text-4xl font-semibold mt-2 text-[var(--color-text)]">{product.name}</h1>
+            <p className="text-3xl font-semibold text-[var(--color-primary)] mt-6">Rs. {product.price}</p>
             <div className="mt-4">
               {product.inStock ? (
-                <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-700">
                   ✓ In Stock
                 </span>
               ) : (
-                <span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="inline-block rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-red-700">
                   Out of Stock
                 </span>
               )}
             </div>
 
             <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-3">Description</h2>
-              <p className="text-gray-600 leading-7">{product.description}</p>
+              <h2 className="text-xl font-semibold mb-3 text-[var(--color-text)]">Description</h2>
+              <p className="text-[var(--color-muted)] leading-7">{product.description}</p>
             </div>
 
-            <button className="mt-10 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition">
+            <button className="mt-10 rounded-[16px] bg-[var(--color-primary)] px-8 py-4 text-white font-semibold transition hover:bg-[var(--color-primary-hover)]">
               Order via WhatsApp
             </button>
           </div>

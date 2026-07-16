@@ -1,32 +1,8 @@
 export const categories = [
-  {
-    id: 1,
-    name: "Puja Samagri",
-    icon: "🪔",
-  },
-  {
-    id: 2,
-    name: "Diyas & Lamps",
-    icon: "🕯️",
-  },
-  {
-    id: 3,
-    name: "Idols",
-    icon: "🛕",
-  },
-  {
-    id: 4,
-    name: "Incense & Dhoop",
-    icon: "🌿",
-  },
-  {
-    id: 5,
-    name: "Flowers & Mala",
-    icon: "🌸",
-  },
-  {
-    id: 6,
-    name: "Festival Items",
-    icon: "🎉",
-  },
+  { id: 1, name: "Diyo", icon: "🪔" },
+  { id: 2, name: "Incense", icon: "🌿" },
+  { id: 3, name: "Rudraksha", icon: "📿" },
+  { id: 4, name: "Idols", icon: "🛕" },
+  { id: 5, name: "Puja Essentials", icon: "🛍️" },
+  { id: 6, name: "Festival Items", icon: "🎉" },
 ];
