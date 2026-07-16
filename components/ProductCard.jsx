@@ -67,6 +67,7 @@ export default ProductCard
 
 import Image from "next/image";
 
+
 export default function ProductCard({ product }) {
   return (
     <div className="border rounded-2xl overflow-hidden bg-white hover:shadow-lg transition duration-300">

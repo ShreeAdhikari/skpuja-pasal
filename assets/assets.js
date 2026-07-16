@@ -7,6 +7,7 @@ import order_icon from "./order_icon.svg";
 import instagram_icon from "./instagram_icon.svg";
 import facebook_icon from "./facebook_icon.svg";
 import twitter_icon from "./twitter_icon.svg";
+//import puja_thali from "./products/puja-thali.jpg";
 import box_icon from "./box_icon.svg";
 import product_list_icon from "./product_list_icon.svg";
 import menu_icon from "./menu_icon.svg";
@@ -28,6 +29,7 @@ export const assets = {
   logo,
   search_icon,
   user_icon,
+  //puja_thali,
   cart_icon,
   add_icon,
   order_icon,
