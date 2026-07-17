@@ -1,69 +1,106 @@
-# QuickCart - A simple eCommerce website
+# 🪔 Puja Pasal
 
-QuickCart is an open-source **Next.js eCommerce frontend** project.  
-It provides a modern, fast and customizable shopping UI.  
-This repo is **frontend only** – contributors can improve the design, add new pages, animations and more.
+**Puja Pasal** is an open-source modern eCommerce website for a Nepali puja supplies store, built with **Next.js** and **Tailwind CSS**.
 
----
+The project focuses on providing a clean, fast, and responsive shopping experience for customers looking for puja essentials such as idols, incense, diyas, flowers, and festival items.
 
-## Features
-
--   Built with **Next.js + Tailwind CSS**
--   Responsive design
--   Reusable components
--   Customizable layouts and colors
--   Open for contributions (UI/UX, animations, themes, layouts etc.)
+This repository is open for contributions. Whether you're improving the UI, adding new features, fixing bugs, or optimizing performance, your contributions are welcome.
 
 ---
 
-## Getting Started
+## ✨ Features
 
-1. Clone the repo
-
-    ```bash
-    git clone https://github.com/GreatStackDev/QuickCart.git
-    cd QuickCart
-    ```
-
-2. Install dependencies
-
-    ```bash
-    npm install
-    ```
-
-3. Run locally
-
-    ```bash
-    npm run dev
-    ```
+- ⚡ Built with **Next.js**
+- 🎨 Styled using **Tailwind CSS**
+- 📱 Fully responsive design
+- 🛍️ Product listing pages
+- 🔍 Clean and modern UI
+- ♻️ Reusable React components
+- 🚀 Fast and optimized frontend
+- ❤️ Open source and contribution-friendly
 
 ---
 
-## Contributing
+## 🚀 Getting Started
 
-We welcome all kinds of contributions! You can:
+### 1. Clone the repository
 
-- Create new pages
-- Improve layouts
-- Add animations and transitions
-- Enhance responsiveness
-- Refactor components
-- Suggest new UI/UX ideas
-- Add themes or color variations
-- Introduce accessibility improvements
-- Add filtering/search features
-- Improve documentation
+```bash
+git clone https://github.com/ShreeAdhikari/Puja-Pasal.git
+cd Puja-Pasal
+```
 
-Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+Open **http://localhost:3000** in your browser.
 
 ---
 
-## License
+## 📂 Tech Stack
+
+- Next.js
+- React
+- Tailwind CSS
+- JavaScript
+
+---
+
+## 🤝 Contributing
+
+Contributions are always welcome!
+
+You can contribute by:
+
+- Improving the UI/UX
+- Fixing bugs
+- Optimizing performance
+- Adding new pages
+- Creating reusable components
+- Improving accessibility
+- Enhancing responsiveness
+- Updating documentation
+- Adding new features
+
+Please read **CONTRIBUTING.md** before opening a Pull Request.
+
+---
+
+## 📌 Roadmap
+
+- Product Categories
+- Search & Filtering
+- QR Payment Support
+- Google Maps Integration
+- Contact & About Pages
+- SEO Improvements
+- Performance Optimization
+- Dark Mode
+- Product Reviews
+
+---
+
+## 📄 License
 
 This project is licensed under the **MIT License**.
 
 ---
 
-## 🌟 Contributors
+## ⭐ Support
 
-Thanks to everyone who contributes to **QuickCart**!
+If you find this project helpful, consider giving it a **⭐ Star** on GitHub.
+
+---
+
+## ❤️ Contributors
+
+Thanks to everyone who contributes to making **Puja Pasal** better!
