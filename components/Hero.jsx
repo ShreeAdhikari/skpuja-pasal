@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 import Button from "@/components/ui/Button";
+import { getWhatsAppUrl } from "@/config/site";
 
 export default function Hero() {
   return (
@@ -25,9 +26,14 @@ export default function Hero() {
             <Button className="rounded-[16px]" onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}>
               Browse Products
             </Button>
-            <Button variant="secondary" className="rounded-[16px]">
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-[16px] px-6 py-3 text-base font-semibold transition duration-200 focus:outline-none bg-white text-[var(--color-text)] border border-[var(--color-border)] hover:bg-[var(--color-background)] active:bg-slate-100 focus-visible:ring-[4px] focus-visible:ring-orange-200"
+            >
               WhatsApp Us
-            </Button>
+            </a>
           </div>
         </div>
 

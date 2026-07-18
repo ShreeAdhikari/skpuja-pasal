@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import { getWhatsAppUrl } from "@/config/site";
 
 export async function generateStaticParams() {
   return products.map((product) => ({
@@ -13,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 const ProductPage = async ({ params }) => {
-  const { slug } = await params;
+  const { slug } = params;
   const product = products.find((item) => item.slug === slug);
 
   if (!product) {
@@ -81,9 +82,16 @@ const ProductPage = async ({ params }) => {
               <p className="text-[var(--color-muted)] leading-7">{product.description}</p>
             </div>
 
-            <button className="mt-10 rounded-[16px] bg-[var(--color-primary)] px-8 py-4 text-white font-semibold transition hover:bg-[var(--color-primary-hover)]">
+            <a
+              href={getWhatsAppUrl(
+                `Hello, I am interested in ordering ${product.name} from ShreePuja. Please share availability and pricing.`
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex rounded-[16px] bg-[var(--color-primary)] px-8 py-4 text-white font-semibold transition hover:bg-[var(--color-primary-hover)]"
+            >
               Order via WhatsApp
-            </button>
+            </a>
           </div>
         </section>
 

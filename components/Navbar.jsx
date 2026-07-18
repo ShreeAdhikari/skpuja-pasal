@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { navigation } from "@/data/navigation";
-import { siteConfig } from "@/config/site";
+import { getWhatsAppUrl } from "@/config/site";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +29,7 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href={`https://wa.me/${siteConfig.whatsapp}`}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-[16px] bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--color-primary-hover)]"
@@ -62,7 +62,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href={`https://wa.me/${siteConfig.whatsapp}`}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-[16px] bg-[var(--color-primary)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--color-primary-hover)]"
